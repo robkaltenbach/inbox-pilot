@@ -1,0 +1,19 @@
+# --- Environment / credentials ---
+.env
+.env.local
+.env.*.local
+.env.*
+!.env.example
+
+# --- Runtime/local data that may contain tokens ---
+server/data/
+*.db
+
+# --- Dependencies / build artifacts ---
+node_modules/
+client/node_modules/
+server/node_modules/
+client/dist/
+dist/
+build/
+.DS_Store
