@@ -10,7 +10,9 @@ The root [`README.md`](../README.md) references these clips (paths relative to r
 | `IP-Search.webm` | Client-side search & filtering |
 | `IP-Slack.webm` | Slack settings + read / reply / complete |
 
+| `thumbnails/*.jpg` | Poster frames for README (GitHub does not embed `<video>` reliably) |
+
 **Tips**
 
 - Prefer short clips and reasonable resolution so clones stay reasonable.
-- README uses `.webm` embeds plus direct links as fallback.
+- README uses poster images + **raw.githubusercontent.com** links to `.webm` (not `/blob/` links).
