@@ -26,57 +26,72 @@ Or use this embed snippet (replace `YOUR_VIDEO_ID`):
 
 ## Feature tour
 
-Short clips in a “store page” layout: title, animation, what you’re seeing. Assets live in [`docs/demo/`](./docs/demo/).
+Short clips in a two-column layout (media / text, alternating). Assets live in [`docs/demo/`](./docs/demo/).
 
----
+<table>
+<tr>
+<td width="50%" valign="top">
+  <video src="./docs/demo/IP-AutoFetch.webm" width="100%" controls loop muted playsinline></video>
+  <p><a href="./docs/demo/IP-AutoFetch.webm">Open clip</a></p>
+</td>
+<td valign="top">
+  <h3>Fetching mail (three paths)</h3>
+  <p>How mail enters InboxPilot: <strong>Gmail push</strong> (Pub/Sub watch + webhook), <strong>manual fetch all</strong> from the header, and <strong>manual fetch on a single thread</strong> — so you can stay hands-off, batch, or drill into one conversation.</p>
+</td>
+</tr>
+</table>
 
-### Fetching mail (three paths)
+<table>
+<tr>
+<td valign="top">
+  <h3>Human in the loop</h3>
+  <p>Give the model <strong>pointers</strong> so it learns what counts as important vs noise for you — steering detection over time instead of a one-shot classifier.</p>
+</td>
+<td width="50%" valign="top">
+  <video src="./docs/demo/IP-HumanInTheLoop.webm" width="100%" controls loop muted playsinline></video>
+  <p><a href="./docs/demo/IP-HumanInTheLoop.webm">Open clip</a></p>
+</td>
+</tr>
+</table>
 
-<p align="center">
-  <img src="./docs/demo/IP-AutoFetch.gif" alt="Auto-fetch, manual fetch all, manual fetch one" width="920" />
-</p>
+<table>
+<tr>
+<td width="50%" valign="top">
+  <video src="./docs/demo/IP-Reply.webm" width="100%" controls loop muted playsinline></video>
+  <p><a href="./docs/demo/IP-Reply.webm">Open clip</a></p>
+</td>
+<td valign="top">
+  <h3>Reply from the app</h3>
+  <p><strong>Reply</strong> from the card, <strong>open the thread in Gmail</strong> when you want the full client, or <strong>use AI</strong> to generate or jump-start a response before you edit and send.</p>
+</td>
+</tr>
+</table>
 
-How mail enters InboxPilot: **Gmail push** (Pub/Sub watch + webhook), **manual fetch all** from the header, and **manual fetch on a single thread** — so you can stay hands-off, batch, or drill into one conversation.
+<table>
+<tr>
+<td valign="top">
+  <h3>Search &amp; filtering</h3>
+  <p><strong>Client-side filtering and search</strong> across triaged mail so you can find threads quickly without another round trip to the server.</p>
+</td>
+<td width="50%" valign="top">
+  <video src="./docs/demo/IP-Search.webm" width="100%" controls loop muted playsinline></video>
+  <p><a href="./docs/demo/IP-Search.webm">Open clip</a></p>
+</td>
+</tr>
+</table>
 
----
-
-### Human in the loop
-
-<p align="center">
-  <img src="./docs/demo/IP-HumanInTheLoop.gif" alt="Steering triage with feedback" width="920" />
-</p>
-
-Give the model **pointers** so it learns what counts as important vs noise for you — steering detection over time instead of a one-shot classifier.
-
----
-
-### Reply from the app
-
-<p align="center">
-  <img src="./docs/demo/IP-Reply.gif" alt="Reply, open Gmail, AI draft" width="920" />
-</p>
-
-**Reply** from the card, **open the thread in Gmail** when you want the full client, or **use AI** to generate or jump-start a response before you edit and send.
-
----
-
-### Search & filtering
-
-<p align="center">
-  <img src="./docs/demo/IP-Search.gif" alt="Client-side search and filtering" width="920" />
-</p>
-
-**Client-side filtering and search** across triaged mail so you can find threads quickly without another round trip to the server.
-
----
-
-### Slack integration
-
-<p align="center">
-  <img src="./docs/demo/IP-Slack.gif" alt="Slack settings and triage actions" width="920" />
-</p>
-
-Tune **Slack notification rules** from the app, then **read the message**, **reply** (including in thread), and **complete** work from the channel — without living in Gmail for every touch.
+<table>
+<tr>
+<td width="50%" valign="top">
+  <video src="./docs/demo/IP-Slack.webm" width="100%" controls loop muted playsinline></video>
+  <p><a href="./docs/demo/IP-Slack.webm">Open clip</a></p>
+</td>
+<td valign="top">
+  <h3>Slack integration</h3>
+  <p>Tune <strong>Slack notification rules</strong> from the app, then <strong>read the message</strong>, <strong>reply</strong> (including in thread), and <strong>complete</strong> work from the channel — without living in Gmail for every touch.</p>
+</td>
+</tr>
+</table>
 
 ---
 

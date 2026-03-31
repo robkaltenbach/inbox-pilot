@@ -4,13 +4,13 @@ The root [`README.md`](../README.md) references these clips (paths relative to r
 
 | File | Section |
 |------|---------|
-| `IP-AutoFetch.gif` | Fetching mail (push, manual all, manual one) |
-| `IP-HumanInTheLoop.gif` | Human-in-the-loop / steering triage |
-| `IP-Reply.gif` | Reply, open Gmail, AI draft |
-| `IP-Search.gif` | Client-side search & filtering |
-| `IP-Slack.gif` | Slack settings + read / reply / complete |
+| `IP-AutoFetch.webm` | Fetching mail (push, manual all, manual one) |
+| `IP-HumanInTheLoop.webm` | Human-in-the-loop / steering triage |
+| `IP-Reply.webm` | Reply, open Gmail, AI draft |
+| `IP-Search.webm` | Client-side search & filtering |
+| `IP-Slack.webm` | Slack settings + read / reply / complete |
 
 **Tips**
 
-- Prefer **short loops** and reasonable resolution so clones stay reasonable; compress large GIFs if needed.
-- For higher quality than GIF, consider MP4/WebM + a thumbnail in README (see README notes).
+- Prefer short clips and reasonable resolution so clones stay reasonable.
+- README uses `.webm` embeds plus direct links as fallback.
