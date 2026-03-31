@@ -1,9 +1,8 @@
 import crypto from "node:crypto";
 import express from "express";
 import {
-  getCategoryCounts,
+  getAllEmails,
   getEmailById,
-  getNeedsReplyEmails,
   getSlackFlow,
   getWaitingOlderThan,
   markDraftStatus,
@@ -33,6 +32,34 @@ import {
 } from "../services/slack.js";
 
 const router = express.Router();
+
+function computeDashboardLanes(all) {
+  const lanes = { NEEDS_REPLY: [], NOISE: [], REPLIED: [] };
+  for (const email of all || []) {
+    if (email.draft_status === "sent" || email.draft_status === "completed") {
+      lanes.REPLIED.push(email);
+      continue;
+    }
+    const key = email.category === "NEEDS_REPLY" ? "NEEDS_REPLY" : "NOISE";
+    lanes[key].push(email);
+  }
+
+  for (const lane of Object.keys(lanes)) {
+    const byThread = new Map();
+    for (const email of lanes[lane]) {
+      const threadKey = email.thread_id || email.id;
+      const existing = byThread.get(threadKey);
+      const emailTs = new Date(email.date || 0).getTime();
+      const existingTs = existing ? new Date(existing.date || 0).getTime() : -Infinity;
+      if (!existing || emailTs >= existingTs) byThread.set(threadKey, email);
+    }
+    lanes[lane] = Array.from(byThread.values()).sort(
+      (a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime()
+    );
+  }
+
+  return lanes;
+}
 
 function verifySlackRequest(signingSecret, signature, timestamp, rawBody) {
   if (!signingSecret || !signature || !timestamp || rawBody == null) return false;
@@ -500,8 +527,9 @@ export async function handleSlackEvents(req, res) {
 router.post("/digest", async (req, res) => {
   try {
     if (!slackEnabled()) return res.status(400).json({ error: "Slack not configured" });
-    const counts = await getCategoryCounts();
-    const needsReply = await getNeedsReplyEmails();
+    const all = await getAllEmails();
+    const lanes = computeDashboardLanes(all);
+    const needsReply = lanes.NEEDS_REPLY;
     const waitingNudges = await getWaitingOlderThan(3);
 
     const blocks = [
@@ -514,10 +542,9 @@ router.post("/digest", async (req, res) => {
         text: {
           type: "mrkdwn",
           text:
-            `*Needs Reply:* ${counts.NEEDS_REPLY}\n` +
-            `*FYI:* ${counts.FYI}\n` +
-            `*Waiting:* ${counts.WAITING}\n` +
-            `*Noise:* ${counts.NOISE}`
+            `*Needs Reply:* ${lanes.NEEDS_REPLY.length}\n` +
+            `*Noise:* ${lanes.NOISE.length}\n` +
+            `*Done:* ${lanes.REPLIED.length}`
         }
       }
     ];

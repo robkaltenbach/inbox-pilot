@@ -243,6 +243,11 @@ export default function App() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search all triaged emails"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="none"
+            spellCheck={false}
+            name="inboxpilot-search"
             className="ml-2 w-full bg-transparent text-xs text-slate-300 placeholder:text-slate-600 outline-none"
           />
           {searchQuery && (
@@ -568,6 +573,11 @@ export default function App() {
                     onInform={(id, correctCategory, reason) =>
                       runAction(async () => {
                         await api.informClassification(id, correctCategory, reason);
+                      })
+                    }
+                    onRemove={(id) =>
+                      runAction(async () => {
+                        await api.removeFromInboxPilot(id);
                       })
                     }
                     onComplete={(id) =>

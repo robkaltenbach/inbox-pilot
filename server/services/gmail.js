@@ -27,6 +27,37 @@ function decodeBase64Url(input = "") {
   return Buffer.from(normalized, "base64").toString("utf-8");
 }
 
+/**
+ * RFC 5322 header values are ASCII-only; non-ASCII must use RFC 2047 encoded-words.
+ * Without this, UTF-8 bytes in Subject/To display names are misread as Latin-1 (mojibake).
+ */
+function encodeRfc2047Utf8B64(value) {
+  const s = String(value ?? "");
+  if (!/[^\x00-\x7F]/.test(s)) return s;
+  const b64 = Buffer.from(s, "utf8").toString("base64");
+  const parts = [];
+  for (let i = 0; i < b64.length; i += 60) {
+    parts.push(`=?UTF-8?B?${b64.slice(i, i + 60)}?=`);
+  }
+  return parts.join("\r\n ");
+}
+
+/** Encode display name in `Name <addr@x.com>` when the name contains non-ASCII. */
+function encodeToHeader(to) {
+  const raw = String(to ?? "").trim();
+  const m = raw.match(/^(.+?)\s*<([^>]+)>$/);
+  if (!m) return raw;
+  let name = m[1].trim();
+  const quote = name.startsWith('"') && name.endsWith('"');
+  if (quote) name = name.slice(1, -1);
+  const email = m[2].trim();
+  if (!/[^\x00-\x7F]/.test(name)) {
+    const disp = quote || /[",]/.test(name) ? `"${name.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"` : name;
+    return `${disp} <${email}>`;
+  }
+  return `${encodeRfc2047Utf8B64(name)} <${email}>`;
+}
+
 function extractPlainText(payload) {
   if (!payload) return "";
   if (payload.mimeType === "text/plain" && payload.body?.data) return decodeBase64Url(payload.body.data);
@@ -240,15 +271,17 @@ export async function fetchEmailById(messageId) {
 
 export async function sendReplyDraft({ threadId, to, subject, bodyText }) {
   const gmail = await getAuthedGmailClient();
-  const raw = Buffer.from(
-    [
-      `To: ${to}`,
-      `Subject: Re: ${subject || ""}`,
-      "Content-Type: text/plain; charset=utf-8",
-      "",
-      bodyText
-    ].join("\n")
-  )
+  const subjectLine = `Re: ${subject || ""}`;
+  const mime = [
+    `To: ${encodeToHeader(to)}`,
+    `Subject: ${encodeRfc2047Utf8B64(subjectLine)}`,
+    "MIME-Version: 1.0",
+    "Content-Type: text/plain; charset=UTF-8",
+    "Content-Transfer-Encoding: 8bit",
+    "",
+    String(bodyText ?? "")
+  ].join("\r\n");
+  const raw = Buffer.from(mime, "utf8")
     .toString("base64")
     .replace(/\+/g, "-")
     .replace(/\//g, "_")

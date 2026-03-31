@@ -24,6 +24,62 @@ Or use this embed snippet (replace `YOUR_VIDEO_ID`):
 </p>
 ```
 
+## Feature tour
+
+Short clips in a “store page” layout: title, animation, what you’re seeing. Assets live in [`docs/demo/`](./docs/demo/).
+
+---
+
+### Fetching mail (three paths)
+
+<p align="center">
+  <img src="./docs/demo/IP-AutoFetch.gif" alt="Auto-fetch, manual fetch all, manual fetch one" width="920" />
+</p>
+
+How mail enters InboxPilot: **Gmail push** (Pub/Sub watch + webhook), **manual fetch all** from the header, and **manual fetch on a single thread** — so you can stay hands-off, batch, or drill into one conversation.
+
+---
+
+### Human in the loop
+
+<p align="center">
+  <img src="./docs/demo/IP-HumanInTheLoop.gif" alt="Steering triage with feedback" width="920" />
+</p>
+
+Give the model **pointers** so it learns what counts as important vs noise for you — steering detection over time instead of a one-shot classifier.
+
+---
+
+### Reply from the app
+
+<p align="center">
+  <img src="./docs/demo/IP-Reply.gif" alt="Reply, open Gmail, AI draft" width="920" />
+</p>
+
+**Reply** from the card, **open the thread in Gmail** when you want the full client, or **use AI** to generate or jump-start a response before you edit and send.
+
+---
+
+### Search & filtering
+
+<p align="center">
+  <img src="./docs/demo/IP-Search.gif" alt="Client-side search and filtering" width="920" />
+</p>
+
+**Client-side filtering and search** across triaged mail so you can find threads quickly without another round trip to the server.
+
+---
+
+### Slack integration
+
+<p align="center">
+  <img src="./docs/demo/IP-Slack.gif" alt="Slack settings and triage actions" width="920" />
+</p>
+
+Tune **Slack notification rules** from the app, then **read the message**, **reply** (including in thread), and **complete** work from the channel — without living in Gmail for every touch.
+
+---
+
 ## Why this project exists
 
 InboxPilot is meant to show practical product + engineering judgment:

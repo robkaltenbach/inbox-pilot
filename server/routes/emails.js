@@ -9,6 +9,7 @@ import {
   getWatchState,
   markDraftStatus,
   markThreadDraftStatus,
+  removeEmailById,
   setEmailManualOverride,
   updateEmailRaw,
   updateDraft,
@@ -278,6 +279,11 @@ function extractSenderName(sender = "") {
   return (match ? match[1] : sender || "Sender").replace(/"/g, "").trim();
 }
 
+function synthesizeFallbackDraft(email) {
+  const name = extractSenderName(email.sender) || "there";
+  return `Hi ${name},\n\nThanks for your email. I received this and will review the details. I'll follow up shortly.\n\nBest,`;
+}
+
 function summaryLooksLikeGarbage(summary) {
   const s = (summary || "").toLowerCase().trim();
   if (!s.length) return true;
@@ -401,13 +407,14 @@ function parseConditionalFeedbackRule(reason = "") {
 
 function enforceCategoryRules(email, analysis) {
   const modelNote = analysis?.classification_reason;
+  const ensuredDraft = analysis?.draft || synthesizeFallbackDraft(email);
 
   // Explicit user feedback overrides should win over generic heuristics.
   if (analysis?._feedbackOverride) {
     return {
       category: analysis.category,
       summary: analysis.category === "NOISE" ? null : analysis.summary,
-      draft: analysis.category === "NEEDS_REPLY" ? analysis.draft : null,
+      draft: analysis.category === "NEEDS_REPLY" ? ensuredDraft : null,
       classification_reason:
         modelNote ||
         clampClassificationReason("Past correction matched this sender or subject.")
@@ -434,7 +441,7 @@ function enforceCategoryRules(email, analysis) {
     return {
       category: "NEEDS_REPLY",
       summary: analysis.summary || normalizeSummary(email, email.snippet || "Action needed on financial/important email."),
-      draft: analysis.draft || null,
+      draft: ensuredDraft,
       classification_reason: clampClassificationReason(
         modelNote
           ? `Rule: human sender + financial/important signals. ${modelNote}`
@@ -473,7 +480,10 @@ function enforceCategoryRules(email, analysis) {
     };
   }
 
-  return analysis;
+  return {
+    ...analysis,
+    draft: ensuredDraft
+  };
 }
 
 function applyFeedbackOverrides(email, analysis, recentFeedback) {
@@ -1123,6 +1133,22 @@ router.post("/:id/retriage", async (req, res) => {
     return res.json({ ok: true, email: updated });
   } catch (error) {
     return res.status(500).json({ error: "Failed to re-triage email", detail: error.message });
+  }
+});
+
+router.post("/:id/remove", async (req, res) => {
+  try {
+    if (req.body?.intent !== "remove") {
+      return res.status(400).json({ error: "Explicit remove intent required" });
+    }
+    const { id } = req.params;
+    const email = await getEmailById(id);
+    if (!email) return res.status(404).json({ error: "Email not found" });
+
+    await removeEmailById(id);
+    return res.json({ ok: true });
+  } catch (error) {
+    return res.status(500).json({ error: "Failed to remove email", detail: error.message });
   }
 });
 

@@ -51,6 +51,7 @@ export default function EmailCard({
   onDiscard,
   onComplete,
   onInform,
+  onRemove,
   onRetriage,
   onGenerateDraft
 }) {
@@ -265,6 +266,16 @@ export default function EmailCard({
                 className="w-full min-h-[90px] rounded-lg border border-white/10 bg-[#0c0e14] px-3 py-2 text-sm text-slate-100 placeholder:text-slate-600 focus:border-indigo-500 focus:outline-none"
               />
               <div className="mt-3 flex justify-end gap-2">
+                <button
+                  onClick={() => {
+                    onRemove(email.id);
+                    setShowInform(false);
+                    setReason("");
+                  }}
+                  className="rounded-lg border border-rose-500/35 bg-rose-500/10 px-3 py-1.5 text-sm font-semibold text-rose-200 hover:bg-rose-500/20 transition"
+                >
+                  Remove from InboxPilot
+                </button>
                 <button
                   onClick={() => {
                     setShowInform(false);

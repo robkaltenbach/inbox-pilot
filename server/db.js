@@ -151,6 +151,10 @@ export async function getEmailById(id) {
   return emails.findOne({ id });
 }
 
+export async function removeEmailById(id) {
+  await emails.remove({ id }, { multi: false });
+}
+
 export async function getAllEmails() {
   return emails.find({}).sort({ date: -1 });
 }
