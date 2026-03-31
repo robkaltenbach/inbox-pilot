@@ -26,17 +26,12 @@ Or use this embed snippet (replace `YOUR_VIDEO_ID`):
 
 ## Feature tour
 
-Short clips in a two-column layout (media / text, alternating). Assets live in [`docs/demo/`](./docs/demo/).
-
-**Note:** GitHub’s README renderer does **not** reliably show `<video>` embeds (they are often stripped). Each row uses a **poster image** that links to the **raw WebM** so your browser can play or download it. Links that point at the normal file page (`/blob/…`) hit GitHub’s preview UI, which often refuses WebM even for small files — use **Open clip (raw WebM)** below. (Forks: replace `robkaltenbach/inbox-pilot` in those URLs with your fork.)
+Short clips in a two-column layout (media / text, alternating). Animated GIFs live in [`docs/demo/`](./docs/demo/) and render inline on GitHub; higher-quality `.webm` versions sit next to them if you clone the repo.
 
 <table>
 <tr>
 <td width="50%" valign="top">
-  <a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-AutoFetch.webm" title="Play WebM clip">
-    <img src="./docs/demo/thumbnails/IP-AutoFetch.jpg" alt="Fetching mail — demo clip" width="100%" />
-  </a>
-  <p><a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-AutoFetch.webm">Open clip (raw WebM)</a></p>
+  <img src="./docs/demo/IP-AutoFetch.gif" alt="Fetching mail — demo clip" width="100%" />
 </td>
 <td valign="top">
   <h3>Fetching mail (three paths)</h3>
@@ -52,10 +47,7 @@ Short clips in a two-column layout (media / text, alternating). Assets live in [
   <p>Give the model <strong>pointers</strong> so it learns what counts as important vs noise for you — steering detection over time instead of a one-shot classifier.</p>
 </td>
 <td width="50%" valign="top">
-  <a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-HumanInTheLoop.webm" title="Play WebM clip">
-    <img src="./docs/demo/thumbnails/IP-HumanInTheLoop.jpg" alt="Human in the loop — demo clip" width="100%" />
-  </a>
-  <p><a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-HumanInTheLoop.webm">Open clip (raw WebM)</a></p>
+  <img src="./docs/demo/IP-HumanInTheLoop.gif" alt="Human in the loop — demo clip" width="100%" />
 </td>
 </tr>
 </table>
@@ -63,10 +55,7 @@ Short clips in a two-column layout (media / text, alternating). Assets live in [
 <table>
 <tr>
 <td width="50%" valign="top">
-  <a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-Reply.webm" title="Play WebM clip">
-    <img src="./docs/demo/thumbnails/IP-Reply.jpg" alt="Reply from the app — demo clip" width="100%" />
-  </a>
-  <p><a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-Reply.webm">Open clip (raw WebM)</a></p>
+  <img src="./docs/demo/IP-Reply.gif" alt="Reply from the app — demo clip" width="100%" />
 </td>
 <td valign="top">
   <h3>Reply from the app</h3>
@@ -82,10 +71,7 @@ Short clips in a two-column layout (media / text, alternating). Assets live in [
   <p><strong>Client-side filtering and search</strong> across triaged mail so you can find threads quickly without another round trip to the server.</p>
 </td>
 <td width="50%" valign="top">
-  <a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-Search.webm" title="Play WebM clip">
-    <img src="./docs/demo/thumbnails/IP-Search.jpg" alt="Search and filtering — demo clip" width="100%" />
-  </a>
-  <p><a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-Search.webm">Open clip (raw WebM)</a></p>
+  <img src="./docs/demo/IP-Search.gif" alt="Search and filtering — demo clip" width="100%" />
 </td>
 </tr>
 </table>
@@ -93,10 +79,7 @@ Short clips in a two-column layout (media / text, alternating). Assets live in [
 <table>
 <tr>
 <td width="50%" valign="top">
-  <a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-Slack.webm" title="Play WebM clip">
-    <img src="./docs/demo/thumbnails/IP-Slack.jpg" alt="Slack integration — demo clip" width="100%" />
-  </a>
-  <p><a href="https://raw.githubusercontent.com/robkaltenbach/inbox-pilot/main/docs/demo/IP-Slack.webm">Open clip (raw WebM)</a></p>
+  <img src="./docs/demo/IP-Slack.gif" alt="Slack integration — demo clip" width="100%" />
 </td>
 <td valign="top">
   <h3>Slack integration</h3>

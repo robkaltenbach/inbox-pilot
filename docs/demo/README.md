@@ -1,18 +1,17 @@
 # Demo assets for the main README
 
-The root [`README.md`](../README.md) references these clips (paths relative to repo root):
+The root [`README.md`](../README.md) embeds these animated GIFs (paths relative to repo root):
 
 | File | Section |
 |------|---------|
-| `IP-AutoFetch.webm` | Fetching mail (push, manual all, manual one) |
-| `IP-HumanInTheLoop.webm` | Human-in-the-loop / steering triage |
-| `IP-Reply.webm` | Reply, open Gmail, AI draft |
-| `IP-Search.webm` | Client-side search & filtering |
-| `IP-Slack.webm` | Slack settings + read / reply / complete |
+| `IP-AutoFetch.gif` | Fetching mail (push, manual all, manual one) |
+| `IP-HumanInTheLoop.gif` | Human-in-the-loop / steering triage |
+| `IP-Reply.gif` | Reply, open Gmail, AI draft |
+| `IP-Search.gif` | Client-side search & filtering |
+| `IP-Slack.gif` | Slack settings + read / reply / complete |
 
-| `thumbnails/*.jpg` | Poster frames for README (GitHub does not embed `<video>` reliably) |
+Matching **`.webm`** files (same basename) are kept for higher quality when viewing a local clone; GitHub’s README does not embed `<video>` reliably, so the README uses GIFs.
 
 **Tips**
 
-- Prefer short clips and reasonable resolution so clones stay reasonable.
-- README uses poster images + **raw.githubusercontent.com** links to `.webm` (not `/blob/` links).
+- Keep GIF duration and dimensions reasonable so the repo and README stay fast to load.
