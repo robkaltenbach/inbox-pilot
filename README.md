@@ -26,62 +26,50 @@ Or use this embed snippet (replace `YOUR_VIDEO_ID`):
 
 ## Feature tour
 
-Short clips in a two-column layout (media / text, alternating). Animated GIFs live in [`docs/demo/`](./docs/demo/) and render inline on GitHub; higher-quality `.webm` versions sit next to them if you clone the repo.
-
-<table>
+<table width="100%">
 <tr>
-<td width="50%" valign="top">
-  <img src="./docs/demo/IP-AutoFetch.gif" alt="Fetching mail — demo clip" width="100%" />
-</td>
 <td valign="top">
+  <img src="./docs/demo/IP-AutoFetch.gif" alt="Fetching mail — demo clip" width="100%" />
   <h3>Fetching mail (three paths)</h3>
   <p>How mail enters InboxPilot: <strong>Gmail push</strong> (Pub/Sub watch + webhook), <strong>manual fetch all</strong> from the header, and <strong>manual fetch on a single thread</strong> — so you can stay hands-off, batch, or drill into one conversation.</p>
 </td>
 </tr>
 </table>
 
-<table>
+<table width="100%">
 <tr>
 <td valign="top">
+  <img src="./docs/demo/IP-HumanInTheLoop.gif" alt="Human in the loop — demo clip" width="100%" />
   <h3>Human in the loop</h3>
   <p>Give the model <strong>pointers</strong> so it learns what counts as important vs noise for you — steering detection over time instead of a one-shot classifier.</p>
-</td>
-<td width="50%" valign="top">
-  <img src="./docs/demo/IP-HumanInTheLoop.gif" alt="Human in the loop — demo clip" width="100%" />
 </td>
 </tr>
 </table>
 
-<table>
+<table width="100%">
 <tr>
-<td width="50%" valign="top">
-  <img src="./docs/demo/IP-Reply.gif" alt="Reply from the app — demo clip" width="100%" />
-</td>
 <td valign="top">
+  <img src="./docs/demo/IP-Reply.gif" alt="Reply from the app — demo clip" width="100%" />
   <h3>Reply from the app</h3>
   <p><strong>Reply</strong> from the card, <strong>open the thread in Gmail</strong> when you want the full client, or <strong>use AI</strong> to generate or jump-start a response before you edit and send.</p>
 </td>
 </tr>
 </table>
 
-<table>
+<table width="100%">
 <tr>
 <td valign="top">
+  <img src="./docs/demo/IP-Search.gif" alt="Search and filtering — demo clip" width="100%" />
   <h3>Search &amp; filtering</h3>
   <p><strong>Client-side filtering and search</strong> across triaged mail so you can find threads quickly without another round trip to the server.</p>
-</td>
-<td width="50%" valign="top">
-  <img src="./docs/demo/IP-Search.gif" alt="Search and filtering — demo clip" width="100%" />
 </td>
 </tr>
 </table>
 
-<table>
+<table width="100%">
 <tr>
-<td width="50%" valign="top">
-  <img src="./docs/demo/IP-Slack.gif" alt="Slack integration — demo clip" width="100%" />
-</td>
 <td valign="top">
+  <img src="./docs/demo/IP-Slack.gif" alt="Slack integration — demo clip" width="100%" />
   <h3>Slack integration</h3>
   <p>Tune <strong>Slack notification rules</strong> from the app, then <strong>read the message</strong>, <strong>reply</strong> (including in thread), and <strong>complete</strong> work from the channel — without living in Gmail for every touch.</p>
 </td>
