@@ -55,7 +55,7 @@
 
 ## Full product demo
 
-<p align="center">The GIFs above are short slices. For a complete walkthrough with narration, <a href="https://youtu.be/8eBGshvf42s"><strong>watch the full demo on YouTube</strong></a>.</p>
+<p align="center">The GIFs above are short slices. For all clips back to back with additional context, <a href="https://youtu.be/8eBGshvf42s"><strong>watch the full demo on YouTube</strong></a>.</p>
 
 <p align="center">
   <a href="https://youtu.be/8eBGshvf42s" title="Open on YouTube">
