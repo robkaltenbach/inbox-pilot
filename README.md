@@ -1,39 +1,20 @@
-# InboxPilot
-
-AI-powered Gmail triage assistant built for fast decision-making: classify unread email into actionable lanes, generate reply drafts, and optionally run a Slack-first workflow for triage/reply/completion.
-
-## Product demo video
-
 <p align="center">
-  <a href="https://youtu.be/8eBGshvf42s" title="Open on YouTube">
-    <table cellspacing="0" cellpadding="0" border="0" align="center">
-      <tr>
-        <td bgcolor="#FF0000">
-          <table cellspacing="0" cellpadding="4" border="0">
-            <tr>
-              <td bgcolor="#0f0f0f" align="center">
-                <img
-                  src="https://img.youtube.com/vi/8eBGshvf42s/maxresdefault.jpg"
-                  alt="InboxPilot product demo — play on YouTube"
-                  width="712"
-                />
-                <table width="712" cellspacing="0" cellpadding="0" border="0">
-                  <tr>
-                    <td bgcolor="#212121" align="center" valign="middle" height="64">
-                      <img src="./docs/demo/yt-play.svg" width="52" height="52" alt="Play" />
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-    <br />
-    <strong>Watch on YouTube</strong>
-  </a>
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td bgcolor="#141414" align="center">
+        <table cellspacing="0" cellpadding="28" border="0">
+          <tr>
+            <td align="center">
+              <img src="./docs/readme-header-logo.png" alt="Inbox Pilot" width="440" />
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </p>
+
+<p align="center"><strong>AI-assisted Gmail triage: sort mail into lanes, draft replies, and optionally handle the same flow from Slack.</strong></p>
 
 ## Feature tour
 
@@ -42,7 +23,7 @@ AI-powered Gmail triage assistant built for fast decision-making: classify unrea
 <td valign="top">
   <img src="./docs/demo/IP-AutoFetch.gif" alt="Fetching mail — demo clip" width="100%" />
   <h3>Fetching mail (three paths)</h3>
-  <p>How mail enters InboxPilot: <strong>Gmail push</strong> (Pub/Sub watch + webhook), <strong>manual fetch all</strong> from the header, and <strong>manual fetch on a single thread</strong> — so you can stay hands-off, batch, or drill into one conversation.</p>
+  <p>How mail enters Inbox Pilot: <strong>Gmail push</strong> (Pub/Sub watch + webhook), <strong>manual fetch all</strong> from the header, and <strong>manual fetch on a single thread</strong> — so you can stay hands-off, batch, or drill into one conversation.</p>
 </td>
 </tr>
 </table>
@@ -87,11 +68,44 @@ AI-powered Gmail triage assistant built for fast decision-making: classify unrea
 </tr>
 </table>
 
+## Full product demo
+
+<p align="center">The GIFs above are short slices. For a complete walkthrough with narration, <a href="https://youtu.be/8eBGshvf42s"><strong>watch the full demo on YouTube</strong></a>.</p>
+
+<p align="center">
+  <a href="https://youtu.be/8eBGshvf42s" title="Open on YouTube">
+    <table cellspacing="0" cellpadding="0" border="0" align="center">
+      <tr>
+        <td bgcolor="#FF0000">
+          <table cellspacing="0" cellpadding="4" border="0">
+            <tr>
+              <td bgcolor="#0f0f0f" align="center">
+                <img
+                  src="https://img.youtube.com/vi/8eBGshvf42s/maxresdefault.jpg"
+                  alt="Inbox Pilot product demo — play on YouTube"
+                  width="712"
+                />
+                <table width="712" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td bgcolor="#212121" align="center" valign="middle" height="64">
+                      <img src="./docs/demo/yt-play.svg" width="52" height="52" alt="Play" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </a>
+</p>
+
 ---
 
 ## Why this project exists
 
-InboxPilot is meant to show practical product + engineering judgment:
+Inbox Pilot is meant to show practical product + engineering judgment:
 - Build an end-to-end workflow around real APIs (Gmail + Slack), not just a model demo.
 - Combine LLM output with deterministic guardrails and explicit user control.
 - Keep architecture intentionally simple for fast iteration, while documenting a realistic scaling path.
@@ -302,3 +316,7 @@ Open `http://localhost:5173`.
 4. Route Gmail push events to the right mailbox/user context.
 5. Add background workers + retry queues for fetch/triage/send tasks.
 6. Add integration + e2e tests around Gmail/Slack adapters.
+
+## License
+
+This project is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — share and adapt with attribution. See [`LICENSE`](./LICENSE).
