@@ -1,6 +1,7 @@
 {
-  "name": "inboxpilot-client",
+  "name": "inbox-pilot-client",
   "version": "1.0.0",
+  "description": "Inbox Pilot web client — AI-assisted Gmail triage UI",
   "private": true,
   "type": "module",
   "scripts": {

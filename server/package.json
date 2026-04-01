@@ -1,6 +1,7 @@
 {
-  "name": "inboxpilot-server",
+  "name": "inbox-pilot-server",
   "version": "1.0.0",
+  "description": "Inbox Pilot API server — Gmail, LLM, and Slack integration",
   "private": true,
   "type": "module",
   "scripts": {
