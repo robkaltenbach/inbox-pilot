@@ -4,25 +4,16 @@ AI-powered Gmail triage assistant built for fast decision-making: classify unrea
 
 ## Product demo video
 
-Paste your demo link here:
-
-- YouTube: `https://www.youtube.com/watch?v=YOUR_VIDEO_ID`
-
-Or use this embed snippet (replace `YOUR_VIDEO_ID`):
-
-```html
 <p align="center">
-  <iframe
-    width="900"
-    height="506"
-    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-    title="InboxPilot demo"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
+  <a href="https://youtu.be/8eBGshvf42s" title="Open on YouTube">
+    <img
+      src="https://img.youtube.com/vi/8eBGshvf42s/maxresdefault.jpg"
+      alt="InboxPilot product demo — play on YouTube"
+      width="720"
+    /><br /><br />
+    <strong>▶ Watch on YouTube</strong>
+  </a>
 </p>
-```
 
 ## Feature tour
 
