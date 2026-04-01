@@ -1,19 +1,4 @@
-<p align="center">
-  <table width="100%" cellspacing="0" cellpadding="0" border="0">
-    <tr>
-      <td bgcolor="#141414" align="center">
-        <table cellspacing="0" cellpadding="28" border="0">
-          <tr>
-            <td align="center">
-              <img src="./docs/readme-header-logo.png" alt="Inbox Pilot" width="440" />
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</p>
-
+<h1>Inbox Pilot</h1>
 <p align="center"><strong>AI-assisted Gmail triage: sort mail into lanes, draft replies, and optionally handle the same flow from Slack.</strong></p>
 
 ## Feature tour
