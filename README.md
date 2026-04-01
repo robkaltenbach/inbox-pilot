@@ -6,12 +6,32 @@ AI-powered Gmail triage assistant built for fast decision-making: classify unrea
 
 <p align="center">
   <a href="https://youtu.be/8eBGshvf42s" title="Open on YouTube">
-    <img
-      src="https://img.youtube.com/vi/8eBGshvf42s/maxresdefault.jpg"
-      alt="InboxPilot product demo — play on YouTube"
-      width="720"
-    /><br /><br />
-    <strong>▶ Watch on YouTube</strong>
+    <table cellspacing="0" cellpadding="0" border="0" align="center">
+      <tr>
+        <td bgcolor="#FF0000">
+          <table cellspacing="0" cellpadding="4" border="0">
+            <tr>
+              <td bgcolor="#0f0f0f" align="center">
+                <img
+                  src="https://img.youtube.com/vi/8eBGshvf42s/maxresdefault.jpg"
+                  alt="InboxPilot product demo — play on YouTube"
+                  width="712"
+                />
+                <table width="712" cellspacing="0" cellpadding="0" border="0">
+                  <tr>
+                    <td bgcolor="#212121" align="center" valign="middle" height="64">
+                      <img src="./docs/demo/yt-play.svg" width="52" height="52" alt="Play" />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <strong>Watch on YouTube</strong>
   </a>
 </p>
 

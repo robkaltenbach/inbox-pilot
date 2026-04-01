@@ -9,6 +9,7 @@ The root [`README.md`](../README.md) embeds these animated GIFs (paths relative 
 | `IP-Reply.gif` | Reply, open Gmail, AI draft |
 | `IP-Search.gif` | Client-side search & filtering |
 | `IP-Slack.gif` | Slack settings + read / reply / complete |
+| `yt-play.svg` | Red “play” glyph for the YouTube preview card in the README |
 
 Matching **`.webm`** files (same basename) are kept for higher quality when viewing a local clone; GitHub’s README does not embed `<video>` reliably, so the README uses GIFs.
 
